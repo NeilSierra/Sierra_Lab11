@@ -8,8 +8,8 @@ passedStudentNum = 0
 
 while systemLoop == True:
     studentGrade = input(f'Student #{studentNum}: ')
-    if studentGrade.isdigit():
-        studentGrade = int(studentGrade)
+    if studentGrade.replace(".", "", 1).isdigit() and studentGrade.count(".") == 1:
+        studentGrade = float(studentGrade)
         if studentGrade >= 40 and studentGrade <= 100:
             grades.append(studentGrade)
             studentNum += 1
